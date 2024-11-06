@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kalkulator Nilai Mahasiswa</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/svg+xml" href="asset/Icon Kalkulator.png" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Kalkulator Nilai Mahasiswa</h1>
+
+      <!-- Informasi Kriteria Penilaian -->
+      <div class="criteria-card">
+        <h2>Kriteria Penilaian</h2>
+        <div class="criteria-grid">
+          <div class="criteria-item grade-a">
+            <h3>A</h3>
+            <p>90 - 100</p>
+            <span class="description">Sangat Baik</span>
+          </div>
+          <div class="criteria-item grade-b">
+            <h3>B</h3>
+            <p>80 - 89</p>
+            <span class="description">Baik</span>
+          </div>
+          <div class="criteria-item grade-c">
+            <h3>C</h3>
+            <p>70 - 79</p>
+            <span class="description">Cukup</span>
+          </div>
+          <div class="criteria-item grade-d">
+            <h3>D</h3>
+            <p>60 - 69</p>
+            <span class="description">Kurang</span>
+          </div>
+          <div class="criteria-item grade-e">
+            <h3>E</h3>
+            <p>0 - 59</p>
+            <span class="description">Sangat Kurang</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Informasi Bobot Penilaian -->
+      <div class="weight-info">
+        <h2>Bobot Penilaian</h2>
+        <div class="weight-grid">
+          <div class="weight-item">
+            <span class="weight-label">Tugas</span>
+            <span class="weight-value">30%</span>
+          </div>
+          <div class="weight-item">
+            <span class="weight-label">UTS</span>
+            <span class="weight-value">30%</span>
+          </div>
+          <div class="weight-item">
+            <span class="weight-label">UAS</span>
+            <span class="weight-value">40%</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="calculator">
+        <!-- Form input nilai -->
+        <div class="input-group">
+          <label for="tugas">Nilai Tugas (30%)</label>
+          <input
+            type="number"
+            id="tugas"
+            min="0"
+            max="100"
+            placeholder="Masukkan nilai tugas"
+            required
+          />
+        </div>
+        <div class="input-group">
+          <label for="uts">Nilai UTS (30%)</label>
+          <input
+            type="number"
+            id="uts"
+            min="0"
+            max="100"
+            placeholder="Masukkan nilai UTS"
+            required
+          />
+        </div>
+        <div class="input-group">
+          <label for="uas">Nilai UAS (40%)</label>
+          <input
+            type="number"
+            id="uas"
+            min="0"
+            max="100"
+            placeholder="Masukkan nilai UAS"
+            required
+          />
+        </div>
+
+        <button onclick="hitungNilai()">Hitung Nilai</button>
+
+        <!-- Tampilan hasil -->
+        <div class="results" id="results">
+          <div class="grade-details">
+            <h3>Detail Nilai</h3>
+            <p>Kontribusi Tugas: <span id="kontribusiTugas">-</span></p>
+            <p>Kontribusi UTS: <span id="kontribusiUTS">-</span></p>
+            <p>Kontribusi UAS: <span id="kontribusiUAS">-</span></p>
+          </div>
+          <div class="final-grade">
+            <h3>Nilai Akhir</h3>
+            <p>Rata-rata Tertimbang: <span id="rataRata">-</span></p>
+            <p>Nilai Huruf: <span id="nilaiHuruf">-</span></p>
+            <p>Status: <span id="status">-</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

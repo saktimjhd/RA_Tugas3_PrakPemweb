@@ -1,0 +1,285 @@
+:root {
+  --warna-utama: #4caf50;
+  --warna-error: #f44336;
+  --warna-teks: #333;
+  --warna-latar: #f5f5f5;
+  --warna-kartu: #fff;
+  --warna-a: #4caf50;
+  --warna-b: #2196f3;
+  --warna-c: #ff9800;
+  --warna-d: #f44336;
+  --warna-e: #9c27b0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background-color: var(--warna-latar);
+  color: var(--warna-teks);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+h1,
+h2 {
+  text-align: center;
+  color: var(--warna-utama);
+  margin-bottom: 1.5rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin-top: 2rem;
+}
+
+/* Kriteria Penilaian Styles */
+.criteria-card {
+  background-color: var(--warna-kartu);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.criteria-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.criteria-item {
+  padding: 1rem;
+  border-radius: 10px;
+  text-align: center;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.criteria-item:hover {
+  transform: translateY(-5px);
+}
+
+.criteria-item h3 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.criteria-item p {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.criteria-item .description {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.grade-a {
+  background-color: var(--warna-a);
+}
+.grade-b {
+  background-color: var(--warna-b);
+}
+.grade-c {
+  background-color: var(--warna-c);
+}
+.grade-d {
+  background-color: var(--warna-d);
+}
+.grade-e {
+  background-color: var(--warna-e);
+}
+
+/* Bobot Penilaian Styles */
+.weight-info {
+  background-color: var(--warna-kartu);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.weight-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.weight-item {
+  text-align: center;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.weight-item:hover {
+  transform: translateY(-3px);
+  background-color: #e9ecef;
+}
+
+.weight-label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.weight-value {
+  font-size: 1.2rem;
+  color: var(--warna-utama);
+}
+
+/* Calculator Styles */
+.calculator {
+  background-color: var(--warna-kartu);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.input-group {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  border-color: var(--warna-utama);
+  outline: none;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.2);
+}
+
+button {
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--warna-utama);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+button:hover {
+  background-color: #45a049;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.results {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 2px solid #eee;
+  display: none;
+}
+
+.grade-details,
+.final-grade {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+
+.results h3 {
+  color: var(--warna-utama);
+  margin-bottom: 1rem;
+}
+
+.results p {
+  margin-bottom: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  border-bottom: 1px dashed #ddd;
+}
+
+.lulus {
+  color: var(--warna-a);
+  font-weight: bold;
+}
+
+.gagal {
+  color: var(--warna-error);
+  font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .container {
+    margin: 1rem auto;
+  }
+
+  .criteria-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .weight-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .calculator,
+  .criteria-card,
+  .weight-info {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.results,
+.criteria-item,
+.weight-item {
+  animation: fadeIn 0.5s ease-out;
+}
